@@ -1,0 +1,13 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.abm-dev-git/abm-mcp",
+  "description": "Account-based marketing enrichment for AI agents. One call returns eighty-nine canonical fields on a person and their company, each with a source, a confidence score, and a freshness timestamp.",
+  "version": "1.0.0",
+  "websiteUrl": "https://abm.dev",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.abm.dev/mcp"
+    }
+  ]
+}
