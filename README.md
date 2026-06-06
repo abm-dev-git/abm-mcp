@@ -56,6 +56,44 @@ curl https://api.abm.dev/v1/enrichments \
 
 ---
 
+## Install (npx)
+
+Prefer a local command over a remote URL? The `abm-mcp` package is a thin
+bridge: `npx -y abm-mcp` launches a local STDIO MCP server that proxies to the
+hosted server at `https://mcp.abm.dev/mcp`, handling the OAuth 2.1 PKCE sign-in
+and token caching for you. It defines no tools of its own — it exposes whatever
+the hosted server serves.
+
+Add it to any MCP client that supports `command`/`args` (Claude Desktop,
+Cursor, Windsurf, Claude Code, and others):
+
+```json
+{
+  "mcpServers": {
+    "abm": {
+      "command": "npx",
+      "args": ["-y", "abm-mcp"]
+    }
+  }
+}
+```
+
+Generic config snippet (for clients that take a bare command):
+
+```json
+{ "command": "npx", "args": ["-y", "abm-mcp"] }
+```
+
+On first run a browser window opens for the one-time sign-in; the token is then
+cached for subsequent runs. Point the bridge at a different endpoint by setting
+the `ABM_MCP_URL` environment variable.
+
+> Either path reaches the same hosted server. Use the **custom connector**
+> (remote URL) above if your client supports it directly; use **npx** for
+> clients that only speak local `command`/`args`.
+
+---
+
 ## Tools
 
 The server exposes **enrichment**:

@@ -1,0 +1,38 @@
+{
+  "name": "abm-mcp",
+  "version": "0.1.0",
+  "description": "Thin local bridge to the hosted abm.dev MCP server — B2B enrichment for AI agents. Proxies stdio to https://mcp.abm.dev/mcp with OAuth 2.1 PKCE.",
+  "type": "module",
+  "bin": {
+    "abm-mcp": "bin/abm-mcp.mjs"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "server.json",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "mcp-remote": "0.1.38"
+  },
+  "keywords": [
+    "mcp",
+    "enrichment",
+    "abm",
+    "b2b-data",
+    "ai-agents"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abm-dev-git/abm-mcp.git"
+  },
+  "homepage": "https://abm.dev",
+  "bugs": {
+    "url": "https://abm.dev"
+  },
+  "author": "Foxley Farm Operations Ltd (abm.dev)",
+  "license": "MIT"
+}
