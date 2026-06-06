@@ -1,8 +1,19 @@
-# abm.dev MCP server
+<p align="center">
+  <img src="https://abm.dev/images/abm-logo-dark.svg" alt="abm.dev" width="180" />
+</p>
 
-Account-based marketing enrichment for AI agents. One endpoint. Eighty-nine canonical fields, every value cited.
+<h1 align="center">abm.dev MCP server</h1>
 
-> **Personalisation, at scale.** A hosted MCP server that gives any agent B2B enrichment — person and company, resolved from ten sources into one cited response.
+<p align="center">
+  <strong>Account-based marketing enrichment for AI agents.</strong><br/>
+  One endpoint. Cited, multi-source fields. Every value attributed.
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/abm-mcp"><img src="https://img.shields.io/npm/v/abm-mcp?color=2563eb&label=abm-mcp" alt="npm" /></a>
+  <a href="https://github.com/abm-dev-git/abm-mcp/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" /></a>
+  <a href="https://mcp.abm.dev/mcp"><img src="https://img.shields.io/badge/MCP-streamable--http-7c3aed" alt="MCP" /></a>
+</p>
 
 - **Hosted server:** `https://mcp.abm.dev/mcp`
 - **Homepage:** https://abm.dev
