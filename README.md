@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://abm.dev"><img src="https://abm.dev/opengraph-image" alt="abm.dev — account-based marketing for AI agents" width="820"></a>
+</p>
+
 # abm.dev MCP server
 
 Account-based marketing enrichment for AI agents. One endpoint. Eighty-nine canonical fields, every value cited.
