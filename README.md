@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/abm-diamond.svg" alt="abm.dev" width="96" />
+  <img src="https://raw.githubusercontent.com/abm-dev-git/abm-mcp/main/assets/abm-diamond.svg" alt="abm.dev" width="96" />
 </p>
 
 <h1 align="center">abm.dev MCP server</h1>
