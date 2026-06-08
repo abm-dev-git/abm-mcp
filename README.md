@@ -13,6 +13,7 @@
   <a href="https://www.npmjs.com/package/abm-mcp"><img src="https://img.shields.io/npm/v/abm-mcp?color=2563eb&label=abm-mcp" alt="npm" /></a>
   <a href="https://github.com/abm-dev-git/abm-mcp/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" /></a>
   <a href="https://mcp.abm.dev/mcp"><img src="https://img.shields.io/badge/MCP-streamable--http-7c3aed" alt="MCP" /></a>
+  <a href="https://smithery.ai/servers/abm-dev/gtm"><img src="https://smithery.ai/badge/abm-dev/gtm" alt="Smithery" /></a>
 </p>
 
 - **Hosted server:** `https://mcp.abm.dev/mcp`
