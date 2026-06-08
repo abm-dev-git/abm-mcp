@@ -4,6 +4,10 @@
   "description": "Account-based marketing for AI agents. A great rep once knew every account. Now your agents do.",
   "version": "1.0.0",
   "websiteUrl": "https://abm.dev",
+  "repository": {
+    "url": "https://github.com/abm-dev-git/abm-mcp",
+    "source": "github"
+  },
   "remotes": [
     {
       "type": "streamable-http",
