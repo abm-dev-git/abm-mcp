@@ -1,5 +1,5 @@
 {
-  "name": "abm-mcp",
+  "name": "@abmdev/mcp",
   "version": "0.1.0",
   "mcpName": "io.github.abm-dev-git/abm-mcp",
   "description": "Thin local bridge to the hosted abm.dev MCP server — B2B enrichment for AI agents. Proxies stdio to https://mcp.abm.dev/mcp with OAuth 2.1 PKCE.",
@@ -35,5 +35,8 @@
     "url": "https://abm.dev"
   },
   "author": "Foxley Farm Operations Ltd (abm.dev)",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

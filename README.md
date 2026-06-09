@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/abm-mcp"><img src="https://img.shields.io/npm/v/abm-mcp?color=2563eb&label=abm-mcp" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/@abmdev/mcp"><img src="https://img.shields.io/npm/v/@abmdev/mcp?color=2563eb&label=%40abmdev%2Fmcp" alt="npm" /></a>
   <a href="https://github.com/abm-dev-git/abm-mcp/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" /></a>
   <a href="https://mcp.abm.dev/mcp"><img src="https://img.shields.io/badge/MCP-streamable--http-7c3aed" alt="MCP" /></a>
   <a href="https://smithery.ai/servers/abm-dev/gtm"><img src="https://smithery.ai/badge/abm-dev/gtm" alt="Smithery" /></a>
@@ -70,8 +70,8 @@ curl https://api.abm.dev/v1/enrichments \
 
 ## Install (npx)
 
-Prefer a local command over a remote URL? The `abm-mcp` package is a thin
-bridge: `npx -y abm-mcp` launches a local STDIO MCP server that proxies to the
+Prefer a local command over a remote URL? The `@abmdev/mcp` package is a thin
+bridge: `npx -y @abmdev/mcp` launches a local STDIO MCP server that proxies to the
 hosted server at `https://mcp.abm.dev/mcp`, handling the OAuth 2.1 PKCE sign-in
 and token caching for you. It defines no tools of its own — it exposes whatever
 the hosted server serves.
@@ -84,7 +84,7 @@ Cursor, Windsurf, Claude Code, and others):
   "mcpServers": {
     "abm": {
       "command": "npx",
-      "args": ["-y", "abm-mcp"]
+      "args": ["-y", "@abmdev/mcp"]
     }
   }
 }
@@ -93,7 +93,7 @@ Cursor, Windsurf, Claude Code, and others):
 Generic config snippet (for clients that take a bare command):
 
 ```json
-{ "command": "npx", "args": ["-y", "abm-mcp"] }
+{ "command": "npx", "args": ["-y", "@abmdev/mcp"] }
 ```
 
 On first run a browser window opens for the one-time sign-in; the token is then
