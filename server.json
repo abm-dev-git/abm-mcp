@@ -12,7 +12,7 @@
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
-      "identifier": "abm-mcp",
+      "identifier": "@abmdev/mcp",
       "version": "0.1.0",
       "runtimeHint": "npx",
       "transport": { "type": "stdio" }
