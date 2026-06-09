@@ -8,6 +8,16 @@
     "url": "https://github.com/abm-dev-git/abm-mcp",
     "source": "github"
   },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "abm-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": { "type": "stdio" }
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
