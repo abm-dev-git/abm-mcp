@@ -5,8 +5,8 @@
 <h1 align="center">abm.dev MCP server</h1>
 
 <p align="center">
-  <strong>Account-based marketing enrichment for AI agents.</strong><br/>
-  One endpoint. Cited, multi-source fields. Every value attributed.
+  <strong>The account-based marketing API for AI agents.</strong><br/>
+  Search, Source, Enrich, and Create across B2B people and companies — one key, one schema, every field cited.
 </p>
 
 <p align="center">
@@ -22,16 +22,23 @@
 
 ---
 
-## What abm.dev is
+## What your agents can do
 
-Account-based marketing for AI agents. Give it an email, a LinkedIn URL, or a company domain; get back a structured record on the person and the company they work for. Every value carries its source, a confidence score, and a last-verified timestamp. A value is cited or it is not returned. No fabricated facts.
+abm.dev is the account-based marketing API for AI agents. One key, one schema, four verbs:
+
+- **Search** — find companies and people by criteria. `search_companies`, `search_contacts`.
+- **Source** — hand it a target account, get the right buying-committee people back. Async briefs: `source`, `get_source`.
+- **Enrich** — cited, multi-source fields on any person or company. `create_enrichment`, `get_enrichment_fields`, `get_enrichment_sources`.
+- **Create** — write CRM records and stage outreach. `create_company`, `create_contact`, `create_outreach`; `queue_linkedin_post` **stages** a post for human approval — it never auto-publishes.
+
+Every value carries its `source` and a `confidence` score (0–1). A value is cited or it is not returned. No fabricated facts.
 
 ## What you get
 
 - **Eighty-nine canonical fields** per record — forty-three on the person, forty-six on the company.
 - **Forty signals** on every prospect.
 - **Ten sources**, resolved into one response — LinkedIn, Companies House, Perplexity, Tavily, Hunter, and others.
-- **Citations on every value** — `source`, `confidence` (0–1), and `freshness` (last-verified timestamp).
+- **A citation on every value** — `source` and `confidence` (0–1), with the winning source that produced it.
 
 No per-source bills. No per-field charges. No silent fallbacks.
 
@@ -45,7 +52,7 @@ No per-source bills. No per-field charges. No silent fallbacks.
 2. Paste the server URL: `https://mcp.abm.dev/mcp`
 3. Complete the one-time sign-in when prompted.
 
-Then ask, in plain language: *"Enrich jane@acme.com."*
+Then ask, in plain language: *"Find the VP of Marketing at Acme, then enrich them."*
 
 ### Cursor / Claude Code / Windsurf
 
@@ -108,12 +115,15 @@ the `ABM_MCP_URL` environment variable.
 
 ## Tools
 
-The server exposes **enrichment**:
+Grouped by verb — every field comes back with its `source` and `confidence` (0–1). Real-time SSE streaming for agent loops; webhooks fire when batch jobs finish.
 
-- **Enrich a person** — from an email or a LinkedIn URL. Returns the forty-three person fields plus the company they work for.
-- **Enrich a company** — from a domain. Returns the forty-six company fields.
+**Search** — `search_companies`, `search_contacts`: find accounts and people by criteria.
 
-Every field comes back with its `source`, `confidence`, and `freshness`. Real-time SSE streaming for agent loops; webhooks fire when batch jobs finish.
+**Source** — `source`, `get_source`: give it an account, get the right people back (async brief).
+
+**Enrich** — `create_enrichment`, `get_enrichment`, `get_enrichment_fields`, `get_enrichment_sources`: cited, multi-source fields on a person (from an email or LinkedIn URL) or a company (from a domain).
+
+**Create** — `create_company`, `create_contact`, `create_outreach`, `queue_linkedin_post`: write CRM records and **stage** outreach. Staged posts wait for human approval; nothing publishes automatically.
 
 ---
 
