@@ -1,8 +1,8 @@
 {
   "name": "@abmdev/mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "mcpName": "io.github.abm-dev-git/abm-mcp",
-  "description": "Thin local bridge to the hosted abm.dev MCP server — B2B enrichment for AI agents. Proxies stdio to https://mcp.abm.dev/mcp with OAuth 2.1 PKCE.",
+  "description": "abm.dev — the account-based marketing API for AI agents. Search, Enrich, and Create across B2B people and companies; every field cited with a source and confidence score. Thin local stdio bridge to the hosted MCP server (mcp.abm.dev, OAuth 2.1 PKCE).",
   "type": "module",
   "bin": {
     "abm-mcp": "bin/abm-mcp.mjs"

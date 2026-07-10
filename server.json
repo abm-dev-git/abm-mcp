@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "io.github.abm-dev-git/abm-mcp",
-  "description": "abm.dev — the account-based marketing API for AI agents: Search, Source, Enrich, Create.",
-  "version": "1.0.2",
+  "description": "abm.dev — the account-based marketing API for AI agents: Search, Enrich, and Create across B2B people and companies, every field cited with a source and confidence score.",
+  "version": "1.0.3",
   "websiteUrl": "https://abm.dev",
   "repository": {
     "url": "https://github.com/abm-dev-git/abm-mcp",
@@ -13,7 +13,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "@abmdev/mcp",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "runtimeHint": "npx",
       "transport": { "type": "stdio" }
     }

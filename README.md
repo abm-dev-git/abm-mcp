@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>The account-based marketing API for AI agents.</strong><br/>
-  Search, Source, Enrich, and Create across B2B people and companies — one key, one schema, every field cited.
+  Search, Enrich, and Create across B2B people and companies — every field cited with a source and confidence score. One key, ten sources, no per-field bills.
 </p>
 
 <p align="center">
