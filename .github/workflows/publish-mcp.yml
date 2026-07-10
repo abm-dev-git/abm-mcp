@@ -1,0 +1,43 @@
+name: Publish to MCP Registry
+
+# Publishes server.json to registry.modelcontextprotocol.io.
+#
+# Auth is GitHub OIDC: the workflow proves it runs under the `abm-dev-git`
+# org, which matches the `io.github.abm-dev-git/*` server namespace, so no
+# secret is required.
+#
+# The npm package (@abmdev/mcp) is versioned and released independently and
+# is NOT published here — this workflow only publishes the MCP server entry.
+# Trigger it by bumping `version` in server.json on main, or run it manually.
+# The registry rejects re-publishing an existing version, so bump the version
+# whenever you want to republish.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - server.json
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # required for OIDC authentication to the registry
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Show what will be published
+        run: echo "Publishing $(jq -r .name server.json) v$(jq -r .version server.json)"
+
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+
+      - name: Authenticate (GitHub OIDC)
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish to MCP Registry
+        run: ./mcp-publisher publish
