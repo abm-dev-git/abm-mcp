@@ -29,6 +29,15 @@ jobs:
             echo "Fetched file does not look like the skill — aborting."; exit 1; }
           mv /tmp/SKILL.md claude-plugin/skills/abm-dev/SKILL.md
 
+      - name: Stamp plugin version from skill content
+        # Claude Code auto-updates an installed plugin only when its version
+        # string changes — stamp it with the skill hash so every content sync
+        # is a version bump.
+        run: |
+          stamp="0.1.0-$(sha256sum claude-plugin/skills/abm-dev/SKILL.md | cut -c1-8)"
+          jq --arg v "$stamp" '.version = $v' claude-plugin/.claude-plugin/plugin.json > /tmp/plugin.json
+          mv /tmp/plugin.json claude-plugin/.claude-plugin/plugin.json
+
       - name: Commit if changed
         run: |
           if git diff --quiet; then
@@ -37,6 +46,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add claude-plugin/skills/abm-dev/SKILL.md
+          git add claude-plugin/skills/abm-dev/SKILL.md claude-plugin/.claude-plugin/plugin.json
           git commit -m "chore: sync plugin skill from abm.dev/abm-dev/SKILL.md"
           git push
