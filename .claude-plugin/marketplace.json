@@ -1,0 +1,13 @@
+{
+  "name": "abm-dev",
+  "description": "abm.dev — B2B enrichment, people search and CRM writeback for agents.",
+  "owner": { "name": "abm.dev", "url": "https://abm.dev" },
+  "plugins": [
+    {
+      "name": "abm-dev",
+      "source": "./claude-plugin",
+      "description": "Enrich B2B people & companies with cited multi-source data (verified work emails, LinkedIn, firmographics, AI research), search/source people at target accounts, and write results back to your CRM. Bundles the abm.dev skill and the MCP connector — zero-paste install.",
+      "homepage": "https://abm.dev"
+    }
+  ]
+}

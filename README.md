@@ -54,6 +54,17 @@ No per-source bills. No per-field charges. No silent fallbacks.
 
 Then ask, in plain language: *"Find the VP of Marketing at Acme, then enrich them."*
 
+### Claude Code (plugin)
+
+One install wires both the connector **and** the [abm.dev Agent Skill](https://abm.dev/abm-dev/SKILL.md) — no URL pasting:
+
+```
+/plugin marketplace add abm-dev-git/abm-mcp
+/plugin install abm-dev@abm-dev
+```
+
+OAuth sign-in happens on first tool use. See [`claude-plugin/`](./claude-plugin/).
+
 ### Cursor / Claude Code / Windsurf
 
 These agents drive the REST API directly. Paste this prompt:

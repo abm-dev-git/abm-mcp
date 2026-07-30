@@ -1,0 +1,42 @@
+name: Sync plugin skill from abm.dev
+
+# claude-plugin/skills/abm-dev/SKILL.md mirrors https://abm.dev/abm-dev/SKILL.md,
+# which is GENERATED from the deployed prod MCP server's tool definitions (abm
+# monorepo: apps/mcp-server/scripts/generate-agent-docs.mjs). Pulling the
+# published file keeps the public plugin exactly in step with what the prod
+# server actually serves — no cross-repo secrets; GITHUB_TOKEN pushes here.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Fetch published SKILL.md
+        run: |
+          curl -fsSL https://abm.dev/abm-dev/SKILL.md -o /tmp/SKILL.md
+          # Guard against committing an error/challenge page served with a 200.
+          sed -n 2p /tmp/SKILL.md | grep -q '^name: abm-dev$' || {
+            echo "Fetched file does not look like the skill — aborting."; exit 1; }
+          mv /tmp/SKILL.md claude-plugin/skills/abm-dev/SKILL.md
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet; then
+            echo "Already in sync."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add claude-plugin/skills/abm-dev/SKILL.md
+          git commit -m "chore: sync plugin skill from abm.dev/abm-dev/SKILL.md"
+          git push

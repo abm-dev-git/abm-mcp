@@ -1,0 +1,13 @@
+{
+  "name": "abm-dev",
+  "version": "0.1.0",
+  "description": "Enrich B2B people & companies with cited multi-source data (verified work emails, LinkedIn, firmographics, AI research), search/source people at target accounts, and write results back to your CRM. Bundles the abm.dev skill and the MCP connector — zero-paste install.",
+  "author": { "name": "abm.dev", "url": "https://abm.dev" },
+  "homepage": "https://abm.dev",
+  "mcpServers": {
+    "abm-dev": {
+      "type": "http",
+      "url": "https://mcp.abm.dev/mcp"
+    }
+  }
+}
